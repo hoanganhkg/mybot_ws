@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leduvanh/mybot_ws/src
+CMAKE_SOURCE_DIR = /home/devbot/mybot_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leduvanh/mybot_ws/build
+CMAKE_BINARY_DIR = /home/devbot/mybot_ws/build
 
 # Utility rule file for map_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build: map_msgs_generate_
 .PHONY : mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build
 
 mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/leduvanh/mybot_ws/build/mybot && $(CMAKE_COMMAND) -P CMakeFiles/map_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/devbot/mybot_ws/build/mybot && $(CMAKE_COMMAND) -P CMakeFiles/map_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean
 
 mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/leduvanh/mybot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leduvanh/mybot_ws/src /home/leduvanh/mybot_ws/src/mybot /home/leduvanh/mybot_ws/build /home/leduvanh/mybot_ws/build/mybot /home/leduvanh/mybot_ws/build/mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/devbot/mybot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/devbot/mybot_ws/src /home/devbot/mybot_ws/src/mybot /home/devbot/mybot_ws/build /home/devbot/mybot_ws/build/mybot /home/devbot/mybot_ws/build/mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mybot/CMakeFiles/map_msgs_generate_messages_nodejs.dir/depend
 

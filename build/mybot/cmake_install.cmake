@@ -1,8 +1,8 @@
-# Install script for directory: /home/leduvanh/mybot_ws/src/mybot
+# Install script for directory: /home/devbot/mybot_ws/src/mybot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/leduvanh/mybot_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/devbot/mybot_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/leduvanh/mybot_ws/build/mybot/catkin_generated/installspace/mybot.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/devbot/mybot_ws/build/mybot/catkin_generated/installspace/mybot.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mybot/cmake" TYPE FILE FILES
-    "/home/leduvanh/mybot_ws/build/mybot/catkin_generated/installspace/mybotConfig.cmake"
-    "/home/leduvanh/mybot_ws/build/mybot/catkin_generated/installspace/mybotConfig-version.cmake"
+    "/home/devbot/mybot_ws/build/mybot/catkin_generated/installspace/mybotConfig.cmake"
+    "/home/devbot/mybot_ws/build/mybot/catkin_generated/installspace/mybotConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mybot" TYPE FILE FILES "/home/leduvanh/mybot_ws/src/mybot/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mybot" TYPE FILE FILES "/home/devbot/mybot_ws/src/mybot/package.xml")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mybot/launch" TYPE DIRECTORY FILES "/home/devbot/mybot_ws/src/mybot/launch/")
 endif()
 

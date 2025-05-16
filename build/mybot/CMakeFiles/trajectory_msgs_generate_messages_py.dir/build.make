@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leduvanh/mybot_ws/src
+CMAKE_SOURCE_DIR = /home/devbot/mybot_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leduvanh/mybot_ws/build
+CMAKE_BINARY_DIR = /home/devbot/mybot_ws/build
 
 # Utility rule file for trajectory_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build: trajectory_msgs
 .PHONY : mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
 
 mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean:
-	cd /home/leduvanh/mybot_ws/build/mybot && $(CMAKE_COMMAND) -P CMakeFiles/trajectory_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/devbot/mybot_ws/build/mybot && $(CMAKE_COMMAND) -P CMakeFiles/trajectory_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
 
 mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/depend:
-	cd /home/leduvanh/mybot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leduvanh/mybot_ws/src /home/leduvanh/mybot_ws/src/mybot /home/leduvanh/mybot_ws/build /home/leduvanh/mybot_ws/build/mybot /home/leduvanh/mybot_ws/build/mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/devbot/mybot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/devbot/mybot_ws/src /home/devbot/mybot_ws/src/mybot /home/devbot/mybot_ws/build /home/devbot/mybot_ws/build/mybot /home/devbot/mybot_ws/build/mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mybot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/depend
 

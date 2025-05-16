@@ -1,0 +1,152 @@
+<launch>
+  <arg name="avoid_enabled" default="false" />
+  <arg name="enable_urg_node" default="false" />
+  <arg name="gps_enabled" default="false" />
+  <!-- <arg name="enable_imu" default="false"/> -->
+  <arg name="enable_guider" default="true"/>
+  <!-- <arg name="enable_controller" default="false"/> -->
+  <arg name="enable_can" default="true"/>
+  <arg name="enable_mqtt" default="true"/>
+
+<!-- ======================Guider==================================================================================== -->
+<group if="$(arg enable_guider)">
+  <node pkg="guider" type="guider_node" name="guider_node" output="screen" >
+    <env name="ROS_IP" value="172.20.10.4"/>
+    <param name="set_heading" value="1.33866753628" />
+    <param name="ned_lat" value="10.772580"/>
+    <param name="ned_lon" value="106.658790"/>
+
+    <!-- setup -->
+    <param name="guiding_period" value="0.25" />           
+    <param name="controlling_period" value="0.25"/>        
+    <param name="set_speed" value="7.5"/>
+
+    <!-- param LOS -->
+    <param name="LOS_radius" value="6.5"/>
+    <param name="LOS_min_delta" value="2.0"/>
+    <param name="LOS_max_delta" value="6.9" />
+    <param name="LOS_beta" value="0.0" />
+    <!-- param PID -->
+    <param name="heading_scale" value="1"/>              
+    <param name="Kp" value="20"/>
+    <param name="Ki" value="0.06"/>
+    <param name="Kd" value="2"/>
+
+    <!-- tiến -->
+      <!-- <rosparam param="waypoint_outdoor_x">[0, -9.2915622,  -22.5651756 , -28.8701196,  -44.1346563]</rosparam>
+      <rosparam param="waypoint_outdoor_y">[0, 32.0315591,   74.7767755,   96.0947342,   149.4443256  ]</rosparam>    -->
+
+      <rosparam param="waypoint_outdoor_x">[-9.2915622, -22.5651756,  -45.0198368 ]</rosparam>
+      <rosparam param="waypoint_outdoor_y">[32.0315591 , 74.7767755,    67.5615184]</rosparam>                
+
+    <!-- lùi -->
+     <!-- <rosparam param="waypoint_outdoor_x">[0, 15.2647775,  21.5698177 , 34.8436240,  74.5540253]</rosparam>
+     <rosparam param="waypoint_outdoor_y">[0, -53.3495225, -74.6674528, -117.4126093,-107.9014026]</rosparam>    -->
+ 
+
+            <!-- base 1                              base 2
+ base 1      0          0                  44.1353308, -149.4441264       
+
+     d1  -9.2915622, 32.0315591            34.8436240, -117.4126093    
+     d1_  30.4188820, 41.5425866           74.5540253, -107.9014026
+     d2  -22.5651756, 74.7767755           21.5698177, -74.6674528
+     d2_ -45.0198368, 67.5615184           -0.8848109, -81.8828112
+     d3  -28.8701196, 96.0947342           15.2647775, -53.3495225
+
+ base 2  -44.1346563, 149.4443256               0          0 -->
+   
+    
+  </node>
+</group>
+<!-- ===================================================================================================================== -->
+
+<!-- Uniservice   0.000000, -0.000000
+d5          -19.910474, 34.986099
+H1          -2.212247, 44.825916
+d4           -54.200666, 88.558655
+d6           -66.368134, 107.145079
+H6            -8.848793, 144.426943
+ 
+Bus           13.274441, 227.409418
+d8            123.224623, 229.485955
+d1            135.613235, 208.166315
+NTD           166.253019, 162.684449
+
+d7            46.458295, 178.210087
+d2            57.519580, 158.530393
+H3            88.491264, 110.424515
+d3            15.486194, 130.104418
+H2 -->
+<!-- ===================================================================================================================== -->
+
+<!-- ==============================CAN==================================== -->
+<group if="$(arg enable_can)">
+<node name = "can_node" pkg = "serial_can" type="can_node" output="screen">
+  <param name="enable_can" value="true"/> 
+  <param name="can_port" value="/dev/ttyUSB1"/>
+  <param name="can_baud" value="921600"/>
+</node>
+</group>
+<!-- ================================================================== -->
+
+
+
+
+<group if="$(arg enable_urg_node)">
+  <node name="urg_node" pkg="urg_node" type="urg_node" output="screen">
+    <param name="ip_address" value=""/>
+    <param name="serial_port" value="/dev/ttyACM1"/>
+    <param name="serial_baud" value="115200"/>
+    <param name="frame_id" value="base_link"/>
+    <param name="calibrate_time" value="false"/>
+    <param name="publish_intensity" value="true"/>
+    <param name="publish_multiecho" value="false"/>
+    <param name="enable_urg-node" value="true"/>
+  </node>
+</group>
+
+<group if="$(arg gps_enabled)">
+<node name = "gps_node1" pkg = "serial_gps" type="gps_node1" output="screen">
+  <param name="enable_gps" value="true"/> 
+  <param name="gps_port" value="/dev/ttyUSB0"/>
+  <param name="gps_baud" value="115200"/>
+  <param name="ref_lat" value=" 10.88133"/>
+  <param name="ref_lon" value="106.80508"/>
+</node>
+</group>
+<group if="$(arg avoid_enabled)">
+<node name = "obstacle_node" pkg = "outdoor_obstacle" type="obstacle_node" output="screen">
+</node>
+</group>
+
+
+
+<group if="$(arg enable_mqtt)">
+<!-- <node name = "test_node" pkg = "mqtt_start" type="test_node.py" output="screen">
+</node> -->
+<node name = "start_mq_node" pkg = "mqtt_start" type="start_mq_node.py" output="screen">
+</node>
+</group>
+
+
+<!-- <group if="$(arg enable_imu)">
+<node name = "imu_node" pkg = "mpu_6050_driver" type="imu_node" output="screen">
+</node>
+</group> -->
+
+
+
+<!-- <group if="$(arg enable_controller)">
+  <node pkg="controller" type="controller" name="controller"  >
+    <param name="controlling_period" value="0.02" />
+    <param name="diff_rpm" value="45.0" />
+    <param name="heading_Kp" value="45.0" />
+    <param name="heading_Ki" value="0.0" />
+    <param name="heading_Kd" value="15.0" />
+    <param name="wheel_radius" value="0.125"/>
+  </node>
+</group> -->
+
+
+
+</launch>

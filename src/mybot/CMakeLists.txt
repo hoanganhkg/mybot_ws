@@ -10,13 +10,19 @@ project(mybot)
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   geometry_msgs
+  gmapping
   roscpp
+  roslib
   rospy
   rviz
+  sensor_msgs
   std_msgs
+  std_srvs
   tf
   urdf
   xacro
+  roslaunch
+  nav_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -76,7 +82,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs#   std_msgs
+#   geometry_msgs#   sensor_msgs#   std_msgs
 # )
 
 ################################################
@@ -111,7 +117,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES mybot
-#  CATKIN_DEPENDS gazebo_ros geometry_msgs roscpp rospy rviz std_msgs tf urdf xacro
+#  CATKIN_DEPENDS gazebo_ros geometry_msgs gmapping roscpp roslib rospy rviz sensor_msgs std_msgs std_srvs tf urdf xacro
 #  DEPENDS system_lib
 )
 
@@ -169,7 +175,8 @@ include_directories(
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
-
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
 # install(TARGETS ${PROJECT_NAME}_node

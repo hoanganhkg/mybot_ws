@@ -1,4 +1,4 @@
-prefix=/home/leduvanh/mybot_ws/devel
+prefix=/home/devbot/mybot_ws/devel
 
 Name: mybot
 Description: Description of mybot

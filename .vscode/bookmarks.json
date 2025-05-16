@@ -1,0 +1,32 @@
+[
+	{
+		"path": "$ROOTPATH$/src/guider/include/pid.h",
+		"bookmarks": [
+			{
+				"line": 8,
+				"column": 18,
+				"label": "chỉnh PID"
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$/src/navi/launch/navi.launch",
+		"bookmarks": [
+			{
+				"line": 58,
+				"column": 0,
+				"label": "chỉnh param delta"
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$/src/guider/src/guider.cpp",
+		"bookmarks": [
+			{
+				"line": 275,
+				"column": 0,
+				"label": ""
+			}
+		]
+	}
+]

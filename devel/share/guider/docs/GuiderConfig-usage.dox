@@ -1,0 +1,14 @@
+\subsubsection usage Usage
+\verbatim
+<node name="guider" pkg="guider" type="guider">
+  <param name="LOS_min_delta" type="double" value="6.0" />
+  <param name="LOS_max_delta" type="double" value="7.9" />
+  <param name="LOS_radius" type="double" value="6.0" />
+  <param name="heading_scale" type="double" value="1.0" />
+  <param name="Kp" type="double" value="20.0" />
+  <param name="Ki" type="double" value="0.0" />
+  <param name="Kd" type="double" value="12.0" />
+  <param name="set_speed" type="double" value="4.5" />
+</node>
+\endverbatim
+

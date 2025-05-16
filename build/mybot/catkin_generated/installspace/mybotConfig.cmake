@@ -67,14 +67,14 @@ set(mybot_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(mybot_SOURCE_PREFIX /home/leduvanh/mybot_ws/src/mybot)
-  set(mybot_DEVEL_PREFIX /home/leduvanh/mybot_ws/devel)
+  set(mybot_SOURCE_PREFIX /home/devbot/mybot_ws/src/mybot)
+  set(mybot_DEVEL_PREFIX /home/devbot/mybot_ws/devel)
   set(mybot_INSTALL_PREFIX "")
   set(mybot_PREFIX ${mybot_DEVEL_PREFIX})
 else()
   set(mybot_SOURCE_PREFIX "")
   set(mybot_DEVEL_PREFIX "")
-  set(mybot_INSTALL_PREFIX /home/leduvanh/mybot_ws/install)
+  set(mybot_INSTALL_PREFIX /home/devbot/mybot_ws/install)
   set(mybot_PREFIX ${mybot_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/leduvanh/mybot_ws/install/lib;/home/leduvanh/mybot_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/devbot/mybot_ws/install/lib;/home/devbot/mybot_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

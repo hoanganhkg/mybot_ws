@@ -1,0 +1,13 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~LOS_min_delta" : \b [double] LOS min delta min: 0.0, default: 6.0, max: 20.0
+- \b "~LOS_max_delta" : \b [double] LOS max delta min: 0.0, default: 7.9, max: 20.0
+- \b "~LOS_radius" : \b [double] LOS radius min: 0.0, default: 6.0, max: 20.0
+- \b "~heading_scale" : \b [double] Heading scaling factor min: 0.1, default: 1.0, max: 1.0
+- \b "~Kp" : \b [double] Proportional Gain min: 0.0, default: 20.0, max: 100.0
+- \b "~Ki" : \b [double] Integral Gain min: 0.0, default: 0.0, max: 5.0
+- \b "~Kd" : \b [double] Derivative Gain min: 0.0, default: 12.0, max: 100.0
+- \b "~set_speed" : \b [double] Set speed min: 0.0, default: 4.5, max: 8.125
+

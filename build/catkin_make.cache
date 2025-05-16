@@ -1,2 +1,2 @@
-mybot:mybot_gazebo
--DCATKIN_DEVEL_PREFIX=/home/leduvanh/mybot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/leduvanh/mybot_ws/install -G Unix Makefiles
+cmd_vel_converter:cre_map:gps_test:guider:lidar_localization:mqtt_start:mybot:navi:outdoor_obstacle:pcl_lidar:radius_create:serial:serial_can:serial_gps:switch_mode:test_send_indoor:urg_node:utils
+-DCATKIN_DEVEL_PREFIX=/home/devbot/mybot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/devbot/mybot_ws/install -G Unix Makefiles
